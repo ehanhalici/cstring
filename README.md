@@ -19,47 +19,47 @@ delete and create new string
 
 slice to ns
 >cstring  ns = String("");
->s->slice(s,ns,5,10);
+>s->slice(s,ns,5,10);<br>
 >ns = -----
 
 add head
->s->addHead(s,"head ");
+>s->addHead(s,"head ");<br>
 >s = head ---------------------
 
 add end
->s->addEnd(s," end");
+>s->addEnd(s," end");<br>
 >s = head --------------------- end
 
 add to
->s->addTo(s,15," new ");
+>s->addTo(s,15," new ");<br>
 >head ---------- new ----------- end
 
 replace in 5 to 10
->s->replaceThisIndex(s,5,10," random text ");
+>s->replaceThisIndex(s,5,10," random text ");<br>
 >s = head  random text ----- new ----------- end
 
 find "random" location
->int  location = s->find(s,0,"random");
-location = 6
+>int  location = s->find(s,0,"random");<br>
+>location = 6
 
 random count
->int  count = s->howManyAreIn(s,"random");
+>int  count = s->howManyAreIn(s,"random");<br>
 >count = 1
 
 replace 
->s->replaceThisString(s,"random","set");
+>s->replaceThisString(s,"random","set");<br>
 >ead  set text ----- new ----------- end
 
 parse and show
->cstringList  l = s->getListFromParse(s," ");
->cstringList  p = l;
->for (size_t  i = 0; i < l->listCount(l); i++)
->{
->    printf("%s\n",p->data->string);
->p=p->next;
->}
+>cstringList  l = s->getListFromParse(s," ");<br>
+>cstringList  p = l;<br>
+>for (size_t  i = 0; i < l->listCount(l); i++)<br>
+>{<br>
+>    printf("%s\n",p->data->string);<br>
+>p=p->next;<br>
+>}<br>
 >
->return :
+>return :<br>
 >head, set, text,-----,new,-----------,end
 
 
@@ -79,7 +79,7 @@ do
 >s->new("new text")
 
 3 - dont do
->cstring ns = String("new varriable")
+>cstring ns = String("new varriable")<br>
 >s->string = ns->string
 
 you lost last data, this causes memory leak. s->string and ns->string, point the same address
