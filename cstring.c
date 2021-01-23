@@ -16,6 +16,7 @@ static void listAdd(cstringList **root, char *string)
 	{
 		(*root)->data = String(string);
 		(*root)->next = NULL;
+		(*root)->back = NULL;
 		return;
 	}
 
@@ -24,7 +25,8 @@ static void listAdd(cstringList **root, char *string)
 	while (ptr->next != NULL)
 		ptr = ptr->next;
 
-	ptr->next = (cstringList *)malloc(sizeof(cstringList));
+	ptr->next = StringList();
+	ptr->next->back = ptr; 
 	ptr = ptr->next;
 
 	ptr->next = NULL;
